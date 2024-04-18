@@ -1,7 +1,10 @@
 * {
   box-sizing: border-box;
+  /* border-box changes the sizing of the element to include the element, padding and border. the child element with shrink to fit the parent container */
+  /* content-box (default) only include width and height of the container property (the child). Padding and border are added to the outside of the specified width and height, causing the total size element to be larger than the parent container*/
 }
-/* '*' = "all elements" (a universal selector), so we are setting all elements to have zero margins, and zero padding, thus making them look the same in all browsers. */
+/* '*' = "all elements" (a universal selector), so we are setting all elements to have zero margins, and zero padding, thus making them look the same in all browsers. 
+does not affect pseudo-elements (like ::before and ::after). To style pseudo-elements, it has to be entered explicitly *::before, *::after */
 
 body {
   margin: 0;
@@ -69,11 +72,13 @@ body {
 .gallery::after {
   content: "";
   width: 350px;
+  /* this creates a empty container/space (you can see it if you add a border) */
 }
 /*
 ::after pseudo-element creates an element that is the last child of the selected element. You can use it to add an empty element after the last image. If you give it the same width as the images it will push the last image to the left when the gallery is in a two-column layout. Right now, it is in the center because you set justify-content: center on the flex container.
-
 */
+
+/* pseudo-element is a keyword added to a selector that allows you to style a specific part of the selected element(s). They are not actual elements but are generated as children of actual elements, and they can be styled using CSS*/
 
 /* 
 Flex Container Properties
