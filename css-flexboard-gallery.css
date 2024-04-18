@@ -20,6 +20,17 @@ body {
 
 .gallery {
   display: flex;
+  /* different displays (Most Common)
+  - inline: Elements sit alongside other elements on the same line, and flows with the text. It does not starting on a new line nor accept width, height. padding and margin properties.
+  - block: Element starting on a new line and taking up the full width available. It accepts width and height properties.
+  - inline-block: Combines characteristics of both inline and block elements. It flows with the text but also allows setting width and height like a block-level element. It accepts padding and margin values.
+  - flex: Elements are flex containers, enables a flexible layout for its direct children (parent is the container, children is flex, grandchildren is not affected). Align items within the container. It's used for creating responsive designs.
+  - grid: Element are grid cdontainer, allowing for complex layouts with rows and columns. Best for grid base design.
+  - none: Removes the element from the document flow, making it invisible and not occupying any space.
+  - table, table-row, table-cell, etc.: These values are used for creating table-like layouts, allowing for more complex structures
+  - contents: Makes the element's children appear as if they were direct children of the element's parent, effectively removing the element from the document flow.
+  - inline-flex, inline-grid, etc.: These are combinations of the inline and flex or grid values */
+
   flex-direction: row;
   
   /* Flex-direction values:
@@ -28,6 +39,9 @@ body {
   row-reverse: horizontal axis with flex items from right to left
   column: vertical axis with flex items from top to bottom
   column-reverse: vertical axis with flex items from bottom to top*/
+  /* flex-direction dictates justify-content and align-items
+  if flex-direction is row, justify-content is align horizontally and align-item is vertical
+  if flex-direction is column, justify-content is align vertically and align-item is horizontally */
 
   flex-wrap: wrap;
   /* Flex Wrap values:
@@ -58,5 +72,26 @@ body {
 }
 /*
 ::after pseudo-element creates an element that is the last child of the selected element. You can use it to add an empty element after the last image. If you give it the same width as the images it will push the last image to the left when the gallery is in a two-column layout. Right now, it is in the center because you set justify-content: center on the flex container.
+
+*/
+
+/* 
+Flex Container Properties
+
+- flex-direction: Determines the main axis of the flex container. It can be row (default), row-reverse, column, or column-reverse.
+- flex-wrap: Specifies whether flex items are forced onto one line or can wrap onto multiple lines. It can be nowrap (default), wrap, or wrap-reverse.
+- flex-flow: A shorthand property for flex-direction and flex-wrap.
+- justify-content: Aligns flex items along the main axis of the current line of the flex container. It can be flex-start, flex-end, center, space-between, space-around, or space-evenly.
+- align-items: Aligns flex items along the cross axis of the current line of the flex container. It can be stretch, flex-start, flex-end, center, or baseline.
+- align-content: Aligns flex lines within the flex container when there is extra space in the cross-axis. It can be stretch, flex-start, flex-end, center, space-between, space-around, or space-evenly.
+
+Flex Item Properties
+
+- order: Specifies the order of a flex item relative to the rest of the flex items inside the same container. The default value is 0.
+- flex-grow: Specifies how much a flex item will grow relative to the rest of the flex items inside the same container. It accepts a unitless value that serves as a proportion.
+- flex-shrink: Specifies how much a flex item will shrink relative to the rest of the flex items inside the same container. It also accepts a unitless value that serves as a proportion.
+- flex-basis: Specifies the initial main size of a flex item. It can be a length (e.g., 20%, 5rem, etc.), auto (default), or content.
+- flex: A shorthand property for flex-grow, flex-shrink, and flex-basis combined. The default is 0 1 auto.
+- align-self: Allows the default alignment (or the one specified by align-items) to be overridden for individual flex items.
 
 */
